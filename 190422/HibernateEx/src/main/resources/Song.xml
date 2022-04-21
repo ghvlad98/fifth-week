@@ -1,0 +1,19 @@
+<?xml version='1.0'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="CD" table="CD_ID">
+        <id name="id" column="CD_ID">
+            <generator class="native"></generator>
+        </id>
+    </class>
+    <class name="Song" table="SONG">
+        <id name="id" type="int" column="ID">
+            <generator class="native"></generator>
+        </id>
+
+        <many-to-one name="album" column="Album" unique="true"/>
+    </class>
+</hibernate-mapping>

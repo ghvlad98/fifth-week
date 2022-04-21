@@ -1,0 +1,18 @@
+<?xml version='1.0'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="CD" table="CD">
+        <id name="id" type="int" column="CD_ID">
+            <generator class="native"></generator>
+        </id>
+
+        <property name="genre" column="Genre" type="string" />
+
+         <many-to-one name="archive" class="Archivio" fetch="select">
+              <column name="Archivio_ID" not-null="true" />
+         </many-to-one>
+    </class>
+</hibernate-mapping>

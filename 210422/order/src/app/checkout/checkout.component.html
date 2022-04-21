@@ -1,0 +1,7 @@
+<div class="container">
+    <ul>
+        <p>Items in cart: (When order completed press 'Checkout' to register your order)</p>
+        <li *ngFor="let item of cartService.cartItems">{{item.name}} Price: {{item.price}}</li>
+        <button (click)="cartService.calculateTotal()">Get total price</button>
+    </ul>
+</div>

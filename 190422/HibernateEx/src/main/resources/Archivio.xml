@@ -1,0 +1,18 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="Archivio" table="ARCHIVIO">
+        <id name="id" type="int" column="Archivio_ID">
+            <generator class="native"></generator>
+        </id>
+
+        <set name="cds" table="CD" inverse="true" cascade="save-update" lazy="true" fetch="select">
+            <key>
+                <column name="Archivio_ID" not-null="true" />
+            </key>
+            <one-to-many class="CD" />
+        </set>
+    </class>
+</hibernate-mapping>

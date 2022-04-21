@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ex1</title>
+        <link rel="stylesheet" href="../CSS/ex1.css">
+        <script type="text/javascript" src="../JS/ex1.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Controllo validita' dell'input con Javascript</h1>
+            <p>
+                Nel campo nome vengono accettate le lettere maiuscole (A-Z), le lettere minuscole (a-z), le lettere</br>
+                minuscole accentate (sia acute che gravi) e lo spazio, purche' non in prima posizione.</br>
+                Nel campo matricola vengono accettati esclusivamente caratteri numerici che formano un numero</br>
+                valido, compreso tra 1 e 2000.</br>
+            </p>
+            <p>
+                Purtroppo alcuni browser Android non supportano l'evento Javascript 'keypress': in questi casi il</br>
+                controllo di validita' non risulta efficace
+            </p>
+            <form name="form" action="get">
+                <div>
+                    <label for="nome">Nome</label>
+                </div>
+                <div>
+                    <input type="text" id="nome" name="nome" onkeypress="checkNome(this)">
+                </div>
+                <div>
+                    <label for="mat">Matricola[1:2000]</label>
+                </div>
+                <div>
+                    <input type="text" id="mat" name="mat" onkeypress="checkMatricola(this)">
+                </div>
+                <input class="press" type="submit" value="Submit">
+                <input class="press" type="reset" value="Reset">
+            </form>
+        </div>
+    </body>
+</html>
